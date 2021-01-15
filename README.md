@@ -1,6 +1,4 @@
-# cakeMaker
-
-2020 Fall Operating System Project
+# cakeMaker -- Swift & XCode
 -------------------
 <git 명령어 모음>
 
