@@ -1,24 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="mainVC" customModule="cakeMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eir-N2-85V">
+                                <rect key="frame" x="172" y="676" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r6p-hb-uMV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eir-N2-85V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gnh-lN-Td5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eir-N2-85V" secondAttribute="bottom" constant="150" id="hJC-Aw-Thl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Oof-AV-Pjz" kind="show" identifier="startBaking" id="eNO-Lu-u5i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1583" y="-583"/>
+        </scene>
+        <!--Stage1VC-->
+        <scene sceneID="0Et-Ji-7wu">
+            <objects>
+                <viewController id="Oof-AV-Pjz" customClass="stage1VC" customModule="cakeMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcI-Fx-kQE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDJ-Cf-K7t">
+                                <rect key="frame" x="189.5" y="622" width="35" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="to2btn:" destination="Oof-AV-Pjz" eventType="touchUpInside" id="tsp-xL-znF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X9o-cV-UTB"/>
+                        <color key="backgroundColor" red="0.90359477679426281" green="0.88102070341530203" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="X9o-cV-UTB" firstAttribute="bottom" secondItem="yDJ-Cf-K7t" secondAttribute="bottom" constant="150" id="8VA-sY-YKs"/>
+                            <constraint firstItem="yDJ-Cf-K7t" firstAttribute="centerX" secondItem="X9o-cV-UTB" secondAttribute="centerX" id="LjY-dP-yto"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q3g-3o-zBT"/>
+                    <connections>
+                        <segue destination="F0b-Rt-EVv" kind="show" identifier="1TO2" id="9RG-14-8gz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVY-Ew-PE2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="103"/>
+        </scene>
+        <!--Stage2VC-->
+        <scene sceneID="DKS-fU-4nP">
+            <objects>
+                <viewController id="F0b-Rt-EVv" customClass="stage2VC" customModule="cakeMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d26-pB-Pq0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqm-ac-1Gj">
+                                <rect key="frame" x="189.5" y="622" width="35" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="to3btn:" destination="F0b-Rt-EVv" eventType="touchUpInside" id="fZ1-t6-PKH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A4H-GC-oJD"/>
+                        <color key="backgroundColor" red="0.81953049058128891" green="0.85317529925115887" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="A4H-GC-oJD" firstAttribute="bottom" secondItem="Qqm-ac-1Gj" secondAttribute="bottom" constant="150" id="Stg-k9-mTF"/>
+                            <constraint firstItem="Qqm-ac-1Gj" firstAttribute="centerX" secondItem="A4H-GC-oJD" secondAttribute="centerX" id="fI2-kh-7Gm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jJq-nn-uKJ"/>
+                    <connections>
+                        <segue destination="hiN-Yr-CCb" kind="show" identifier="2TO3" id="9Me-f6-u9x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMs-OX-jRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159" y="102"/>
+        </scene>
+        <!--Stage3VC-->
+        <scene sceneID="4TF-Em-b6a">
+            <objects>
+                <viewController id="hiN-Yr-CCb" customClass="stage3VC" customModule="cakeMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wm2-T1-gMY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrN-vc-fwK">
+                                <rect key="frame" x="189.5" y="622" width="35" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="to4btn:" destination="hiN-Yr-CCb" eventType="touchUpInside" id="bns-Ei-yo0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sZt-Ei-OiW"/>
+                        <color key="backgroundColor" red="1" green="0.82246899239122606" blue="0.9450528721506517" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="YrN-vc-fwK" firstAttribute="centerX" secondItem="sZt-Ei-OiW" secondAttribute="centerX" id="ZWH-vu-rxD"/>
+                            <constraint firstItem="sZt-Ei-OiW" firstAttribute="bottom" secondItem="YrN-vc-fwK" secondAttribute="bottom" constant="150" id="eNU-ww-eff"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SfG-8v-eRa"/>
+                    <connections>
+                        <segue destination="lqE-bz-Lcl" kind="show" identifier="3TO4" id="HqV-G6-l0L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tC0-xA-0NK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810" y="102"/>
+        </scene>
+        <!--Stage4VC-->
+        <scene sceneID="k9o-Fl-kEx">
+            <objects>
+                <viewController id="lqE-bz-Lcl" customClass="stage4VC" customModule="cakeMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Gh-OB-Rv8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4H-nj-Qrc">
+                                <rect key="frame" x="138.5" y="610" width="137" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="레시피 제출">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bpO-2V-jXd"/>
+                        <color key="backgroundColor" red="1" green="0.82190605652657323" blue="0.79307883840165516" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="bpO-2V-jXd" firstAttribute="bottom" secondItem="X4H-nj-Qrc" secondAttribute="bottom" constant="150" id="NDx-wb-Dpq"/>
+                            <constraint firstItem="X4H-nj-Qrc" firstAttribute="centerX" secondItem="bpO-2V-jXd" secondAttribute="centerX" id="kVh-5k-I6r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dLa-ye-tbV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhE-zJ-fLI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2461" y="102"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
