@@ -10,15 +10,15 @@ import FSCalendar
 
 class CalenderViewController: UIViewController {
 
+
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var calenderVC: FSCalendar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         // Do any additional setup after loading the view.
     }
-    
-
-    @IBOutlet weak var stepLabel: UILabel!
-    @IBOutlet weak var calenderVC: FSCalendar!
     
     func updateUI() {
         stepLabel.text = "Step1. 픽업 날짜를 선택해주세요."
@@ -28,7 +28,6 @@ class CalenderViewController: UIViewController {
         
         // 달력의 요일 글자 바꾸기
         calenderVC.locale = Locale(identifier: "ko_KR")
-        
     }
     
     

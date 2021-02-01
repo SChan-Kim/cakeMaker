@@ -9,19 +9,26 @@ import UIKit
 
 class CakeSelectionViewController: UIViewController {
     
-    @IBOutlet weak var sectionTitle: UILabel!
+    @IBOutlet weak var stepLabel: UILabel!
+    
+    let viewModel = TasteViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func updateUI() {
+        stepLabel.text = "Step2. 케이크 크기와 맛을 선택해주세요."
     }
     
 }
 
 extension CakeSelectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numOftasteInfoList
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,7 +36,8 @@ extension CakeSelectionViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.updateUI()
+        let tasteInfo = viewModel.tasteInfo(at: indexPath.item)
+        cell.updateImageUI(info: tasteInfo)
         return cell
     }
     
@@ -40,18 +48,17 @@ extension CakeSelectionViewController: UICollectionViewDataSource {
 
 extension CakeSelectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 160)
+        return CGSize(width: 374, height: 122)
     }
 }
-
-
 
 class SelectionCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnail: UIImageView!
     
-    func updateUI() {
-        thumbnail.image = UIImage(named: "test1")
+    func updateImageUI(info: ImageInfo) {
+        thumbnail.image = info.image
     }
     
 }
+
