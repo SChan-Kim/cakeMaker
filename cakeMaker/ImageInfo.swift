@@ -9,6 +9,7 @@ import UIKit
 
 struct ImageInfo {
     let name: String
+    let nameLabel: String
     
     var image: UIImage? {
         return UIImage(named: "\(name).jpg")
@@ -16,7 +17,14 @@ struct ImageInfo {
     
     init(name: String) {
         self.name = name
+        self.nameLabel = name
     }
+    
+    init(name: String, nameLabel: String) {
+        self.name = name
+        self.nameLabel = nameLabel
+    }
+    
 }
 
 // 맛 정보
@@ -40,28 +48,29 @@ class TasteViewModel {
 // 배경색 정보
 class BGColorViewModel {
     let BGcolorInfoList: [ImageInfo] = [
-    ImageInfo(name: "apricotBG"),
-    ImageInfo(name: "blueBG"),
-    ImageInfo(name: "camoBG"),
-    ImageInfo(name: "greenBG"),
-    ImageInfo(name: "hotpinkBG"),
-    ImageInfo(name: "lightpinkBG"),
-    ImageInfo(name: "mintBG"),
-    ImageInfo(name: "oliveBG"),
-    ImageInfo(name: "orangeBG"),
-    ImageInfo(name: "purpleBG"),
-    ImageInfo(name: "redBG"),
-    ImageInfo(name: "skyblueBG"),
-    ImageInfo(name: "whiteBG"),
-    ImageInfo(name: "yellowBG")
+    ImageInfo(name: "apricotBG", nameLabel: "살구"),
+    ImageInfo(name: "blueBG", nameLabel: "파랑"),
+    ImageInfo(name: "camoBG", nameLabel: "밀리터리"),
+    ImageInfo(name: "greenBG", nameLabel: "초록"),
+    ImageInfo(name: "hotpinkBG", nameLabel: "진분홍"),
+    ImageInfo(name: "lightpinkBG", nameLabel: "연분홍"),
+    ImageInfo(name: "mintBG",nameLabel: "민트"),
+    ImageInfo(name: "oliveBG",nameLabel: "올리브"),
+    ImageInfo(name: "orangeBG",nameLabel: "주황"),
+    ImageInfo(name: "purpleBG",nameLabel: "보라"),
+    ImageInfo(name: "redBG", nameLabel: "빨강"),
+    ImageInfo(name: "skyblueBG", nameLabel: "소라"),
+    ImageInfo(name: "whiteBG", nameLabel: "흰색"),
+    ImageInfo(name: "yellowBG", nameLabel: "노랑")
     ]
     
     var numOfBGcolorInfoList: Int {
         return BGcolorInfoList.count
     }
     
-    func colorInfo(at index: Int) -> ImageInfo {
+    func BGcolorInfo(at index: Int) -> ImageInfo {
         return BGcolorInfoList[index]
     }
+    
     
 }

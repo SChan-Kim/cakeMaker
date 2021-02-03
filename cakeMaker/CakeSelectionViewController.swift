@@ -37,7 +37,7 @@ extension CakeSelectionViewController: UICollectionViewDataSource {
         }
         
         let tasteInfo = viewModel.tasteInfo(at: indexPath.item)
-        cell.updateImageUI(info: tasteInfo)
+        cell.updateUI(info: tasteInfo)
         return cell
     }
     
@@ -56,7 +56,7 @@ class SelectionCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnail: UIImageView!
     
-    func updateImageUI(info: ImageInfo) {
+    func updateUI(info: ImageInfo) {
         thumbnail.image = info.image
     }
     
