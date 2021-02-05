@@ -9,8 +9,12 @@ import UIKit
 
 class ColorViewController: UIViewController {
 
+    @IBOutlet weak var BGColorCollectionView: UICollectionView!
+    @IBOutlet weak var CreamColorCollectionView: UICollectionView!
     @IBOutlet weak var stepLabel: UILabel!
-    let viewModel = BGColorViewModel()
+    
+    let BGViewModel = BGColorViewModel()
+    let CreamViewModel = CreamColorViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +30,38 @@ class ColorViewController: UIViewController {
 
 extension ColorViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numOfBGcolorInfoList
+        if collectionView == BGColorCollectionView {
+            return BGViewModel.numOfBGColorInfoList
+        } else if collectionView == CreamColorCollectionView {
+            return CreamViewModel.numOfCreamColorInfoList
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BGColorCell", for: indexPath) as? BGColorCell else {
+        if collectionView == BGColorCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BGColorCell", for: indexPath) as? BGColorCell else {
+                return UICollectionViewCell()
+            }
+            
+            let BGcolorinfo = BGViewModel.BGColorInfo(at: indexPath.item)
+            cell.updateUI(info: BGcolorinfo)
+            
+            return cell
+        } else if collectionView == CreamColorCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreamColorCell", for: indexPath) as? CreamColorCell else {
+                return UICollectionViewCell()
+            }
+            
+            let CreamColorinfo = CreamViewModel.CreamColorInfo(at: indexPath.item)
+            cell.updateUI(info: CreamColorinfo)
+            
+            return cell
+        } else {
             return UICollectionViewCell()
         }
-        
-        let BGcolorinfo = viewModel.BGcolorInfo(at: indexPath.item)
-        cell.updateUI(info: BGcolorinfo)
-        
-        return cell
     }
-    
 }
 
 extension ColorViewController: UICollectionViewDelegateFlowLayout {
@@ -59,4 +81,15 @@ class BGColorCell: UICollectionViewCell {
         BGColorName.text = info.nameLabel
     }
     
+}
+
+class CreamColorCell: UICollectionViewCell {
+    
+    @IBOutlet weak var CreamColorImage: UIImageView!
+    @IBOutlet weak var CreamColorName: UILabel!
+    
+    func updateUI(info: ImageInfo) {
+        CreamColorImage.image = info.image
+        CreamColorName.text = info.nameLabel
+    }
 }

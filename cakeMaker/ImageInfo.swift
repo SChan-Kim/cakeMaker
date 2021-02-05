@@ -47,7 +47,7 @@ class TasteViewModel {
 
 // 배경색 정보
 class BGColorViewModel {
-    let BGcolorInfoList: [ImageInfo] = [
+    let BGColorInfoList: [ImageInfo] = [
     ImageInfo(name: "apricotBG", nameLabel: "살구"),
     ImageInfo(name: "blueBG", nameLabel: "파랑"),
     ImageInfo(name: "camoBG", nameLabel: "밀리터리"),
@@ -64,13 +64,39 @@ class BGColorViewModel {
     ImageInfo(name: "yellowBG", nameLabel: "노랑")
     ]
     
-    var numOfBGcolorInfoList: Int {
-        return BGcolorInfoList.count
+    var numOfBGColorInfoList: Int {
+        return BGColorInfoList.count
     }
     
-    func BGcolorInfo(at index: Int) -> ImageInfo {
-        return BGcolorInfoList[index]
+    func BGColorInfo(at index: Int) -> ImageInfo {
+        return BGColorInfoList[index]
     }
     
+}
+
+// 크림색 정보
+class CreamColorViewModel {
+    let CreamColorInfoList: [ImageInfo] = [
+    ImageInfo(name: "blackCream", nameLabel: "검정"),
+    ImageInfo(name: "blueCream", nameLabel: "파랑"),
+    ImageInfo(name: "greenCream", nameLabel: "초록"),
+    ImageInfo(name: "hotpinkCream", nameLabel: "진분홍"),
+    ImageInfo(name: "lightpinkCream", nameLabel: "연분홍"),
+    ImageInfo(name: "mintCream", nameLabel: "민트"),
+    ImageInfo(name: "oliveCream", nameLabel: "올리브"),
+    ImageInfo(name: "orangeCream", nameLabel: "오렌지"),
+    ImageInfo(name: "purpleCream", nameLabel: "보라"),
+    ImageInfo(name: "redCream", nameLabel: "빨강"),
+    ImageInfo(name: "skyblueCream", nameLabel: "소라"),
+    ImageInfo(name: "whiteCream", nameLabel: "흰색"),
+    ImageInfo(name: "yellowCream", nameLabel: "노랑")
+    ]
     
+    var numOfCreamColorInfoList: Int {
+        return CreamColorInfoList.count
+    }
+    
+    func CreamColorInfo(at index: Int) -> ImageInfo {
+        return CreamColorInfoList[index]
+    }
 }
