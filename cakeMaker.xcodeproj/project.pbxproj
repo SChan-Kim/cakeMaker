@@ -15,6 +15,7 @@
 		642338A125B1A6BD002AEA38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642338A025B1A6BD002AEA38 /* Assets.xcassets */; };
 		642338A425B1A6BD002AEA38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642338A225B1A6BD002AEA38 /* LaunchScreen.storyboard */; };
 		643A804D25C7DEBD006B6B2E /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643A804C25C7DEBD006B6B2E /* ImageInfo.swift */; };
+		64A4F65125D13372000A9288 /* DecorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A4F65025D13372000A9288 /* DecorationViewController.swift */; };
 		64B01B1D25C7C18D004E6A2A /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B01B1C25C7C18D004E6A2A /* CalenderViewController.swift */; };
 		64C01D6125C299E4005A0C45 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C01D6025C299E4005A0C45 /* MainScreenViewController.swift */; };
 		64D79E7925C7E89E00542908 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D79E7825C7E89E00542908 /* ColorViewController.swift */; };
@@ -34,6 +35,7 @@
 		642338A325B1A6BD002AEA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		642338A525B1A6BD002AEA38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643A804C25C7DEBD006B6B2E /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
+		64A4F65025D13372000A9288 /* DecorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationViewController.swift; sourceTree = "<group>"; };
 		64B01B1C25C7C18D004E6A2A /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		64C01D6025C299E4005A0C45 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		64D79E7825C7E89E00542908 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				6423389725B1A6BB002AEA38 /* AppDelegate.swift */,
 				6423389925B1A6BB002AEA38 /* SceneDelegate.swift */,
 				6423389D25B1A6BB002AEA38 /* Main.storyboard */,
+				64A4F65025D13372000A9288 /* DecorationViewController.swift */,
 				64B01B1C25C7C18D004E6A2A /* CalenderViewController.swift */,
 				6403B14E25B9DA180068F03A /* CakeSelectionViewController.swift */,
 				64D79E7825C7E89E00542908 /* ColorViewController.swift */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64B01B1D25C7C18D004E6A2A /* CalenderViewController.swift in Sources */,
+				64A4F65125D13372000A9288 /* DecorationViewController.swift in Sources */,
 				64C01D6125C299E4005A0C45 /* MainScreenViewController.swift in Sources */,
 				64D79E7925C7E89E00542908 /* ColorViewController.swift in Sources */,
 				641A845A25B92BB10025A809 /* CakeMakerViewController.swift in Sources */,

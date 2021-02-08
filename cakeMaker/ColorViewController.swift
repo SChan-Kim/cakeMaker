@@ -67,7 +67,11 @@ extension ColorViewController: UICollectionViewDataSource {
 extension ColorViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 전체 뷰 사이즈 기준으로 마진설정 다시하기
-        return CGSize(width: 100, height: 120)
+        if collectionView == BGColorCollectionView || collectionView == CreamColorCollectionView {
+            return CGSize(width: 100, height: 120)
+        } else {
+            return CGSize(width: 100, height: 100)
+        }
     }
 }
 
